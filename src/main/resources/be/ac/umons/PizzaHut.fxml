@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.ac.umons.PizzaHutController">
+    <children>
+        <AnchorPane fx:id="Basic" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Label alignment="CENTER" layoutX="186.0" layoutY="45.0" style="&#10;" text="Welcome To Pizza Hut!" textAlignment="CENTER" textFill="#a90c0c" wrapText="false">
+                    <font>
+                        <Font name="Arial" size="28.0" />
+                    </font>
+                </Label>
+                <Label layoutX="104.0" layoutY="136.0" text="Step 1: pick your order">
+                    <font>
+                        <Font size="14.0" />
+                    </font></Label>
+                <Label layoutX="114.0" layoutY="246.0" text="Step 2: dough style">
+                    <font>
+                        <Font size="14.0" />
+                    </font></Label>
+                <Button layoutX="496.0" layoutY="348.0" mnemonicParsing="false" onAction="#BeginPrerperation" text="Place your order" />
+                <Button layoutX="42.0" layoutY="348.0" mnemonicParsing="false" onAction="#goBack" text="Go back" />
+                <RadioButton fx:id="Cheesy" layoutX="144.0" layoutY="285.0" mnemonicParsing="false" onAction="#HandleDoughType" text="Cheesy">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="DoughStyle" />
+                    </toggleGroup></RadioButton>
+                <RadioButton fx:id="Pan" layoutX="240.0" layoutY="285.0" mnemonicParsing="false" onAction="#HandleDoughType" text="Pan" toggleGroup="$DoughStyle" />
+                <RadioButton fx:id="BasicDough" layoutX="50.0" layoutY="285.0" mnemonicParsing="false" onAction="#HandleDoughType" selected="true" text="Basic" toggleGroup="$DoughStyle" />
+                <Label fx:id="PrepState" alignment="CENTER" layoutX="-1.0" layoutY="85.0" prefHeight="26.0" prefWidth="640.0" text="Waiting for you to place your order">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Button layoutX="343.0" layoutY="348.0" mnemonicParsing="false" onAction="#AddToOrder" text="Add to order" />
+                <RadioButton fx:id="Margherita" layoutX="64.0" layoutY="173.0" mnemonicParsing="false" selected="true" text="Margherita">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="Pizza" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="Prosciutto" layoutX="195.0" layoutY="173.0" mnemonicParsing="false" text="Prosciutto" toggleGroup="$Pizza" />
+                <RadioButton fx:id="Carbonara" layoutX="66.0" layoutY="208.0" mnemonicParsing="false" text="Carbonara" toggleGroup="$Pizza" />
+                <RadioButton fx:id="FruttiDiMarre" layoutX="194.0" layoutY="208.0" mnemonicParsing="false" text="Frutti Di Marre" toggleGroup="$Pizza" />
+                <Button layoutX="142.0" layoutY="348.0" mnemonicParsing="false" onAction="#FillStock" text="Fill Stock" />
+                <TextArea fx:id="Screen" editable="false" layoutX="370.0" layoutY="161.0" prefHeight="152.0" prefWidth="200.0" AnchorPane.topAnchor="161.0" />
+                <Label alignment="CENTER" layoutX="370.0" layoutY="136.0" prefHeight="18.0" prefWidth="200.0" text="Order liste:">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
